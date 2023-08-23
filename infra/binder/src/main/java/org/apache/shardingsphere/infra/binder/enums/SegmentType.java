@@ -15,19 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.shardingsphere.infra.exception;
-
-import org.apache.shardingsphere.infra.exception.core.external.sql.sqlstate.XOpenSQLState;
-import org.apache.shardingsphere.infra.exception.core.external.sql.type.kernel.category.MetaDataSQLException;
+package org.apache.shardingsphere.infra.binder.enums;
 
 /**
- * Unknown column exception.
+ * Segment type enum.
  */
-public final class UnknownColumnException extends MetaDataSQLException {
+public enum SegmentType {
     
-    private static final long serialVersionUID = -1305402273592303335L;
-    
-    public UnknownColumnException(final String columnExpression, final String segmentTypeMessage) {
-        super(XOpenSQLState.NOT_FOUND, 6, "Unknown column '%s' in '%s'.", columnExpression, segmentTypeMessage);
-    }
+    PROJECTION, PREDICATE, JOIN_ON, JOIN_USING, ORDER_BY, GROUP_BY
 }
